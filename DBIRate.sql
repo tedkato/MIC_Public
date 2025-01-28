@@ -33,8 +33,8 @@ with ur;
 select count(*) from celink.tblLoanNotes for read only with ur;  --JAVATest 151380282
 
 Insert into celink.tblLoanNotes 
-(INTSUBSERVICERLOANNUMBER, CHRLOANNOTES, DTMNOTEDATE, CHRUSERID, BLNPRIORITY, NoteStep, CHRCATEGORY)
-select LOAN, LOANNOTES, CURRENT_TIMESTAMP, USERID, PRIORITY, 0 "NoteStep", 'HDT134885' "Category" from DATAUPDT.LOANNOTES_TKATO order by LOAN;  
+(INTSUBSERVICERLOANNUMBER, CHRLOANNOTES, DTMNOTEDATE, CHRUSERID, BLNPRIORITY, NoteStep)
+select LOAN, LOANNOTES, CURRENT_TIMESTAMP, USERID, PRIORITY, 0 "NoteStep" from DATAUPDT.LOANNOTES_TKATO order by LOAN;  
 		
 -- Count the number of existing notes again    
 select count(*) from celink.tblLoanNotes for read only with ur; --JAVATest 151392867 ... 151392867 = (select 151380282 + 12585 from sysibm.sysdummy1;)
